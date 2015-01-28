@@ -230,9 +230,10 @@ static void RollOutHotkeyTerm(PseudoTerminal* term, BOOL itermWasActiveWhenHotke
         PseudoTerminal* currentTerm = [[iTermController sharedInstance] currentTerminal];
         if (currentTerm && ![currentTerm isHotKeyWindow] && [currentTerm fullScreen]) {
             [currentTerm hideMenuBar];
-        } else {
-            [currentTerm showMenuBar];
         }
+        //} else {
+        //    [currentTerm showMenuBar];
+        //}
     }
 
     // NOTE: There used be an option called "closing hotkey switches spaces". I've removed the

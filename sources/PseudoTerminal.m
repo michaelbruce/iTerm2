@@ -432,7 +432,7 @@ static const CGFloat kHorizontalTabBarHeight = 22;
         // If you create a window with a minimize button and the menu bar is hidden then the
         // minimize button is disabled. Currently the only window type with a miniaturize button
         // is NORMAL.
-        [self showMenuBar];
+        [self hideMenuBar];
     }
     // Force the nib to load
     [self window];
@@ -2274,7 +2274,7 @@ static const CGFloat kHorizontalTabBarHeight = 22;
     // If a fullscreen window is closing, hide the menu bar unless it's only fullscreen because it's
     // mid-toggle in which case it's really the window that's replacing us that is fullscreen.
     if (_fullScreen && !togglingFullScreen_) {
-        [self showMenuBar];
+        //[self showMenuBar];
     }
 
     // Save frame position for last window
@@ -3184,7 +3184,7 @@ static const CGFloat kHorizontalTabBarHeight = 22;
                       display:YES];
         self.window.alphaValue = 1;
     } else {
-        [self showMenuBar];
+        [self hideMenuBar];
         windowType_ = savedWindowType_;
         self.window.styleMask = [self styleMask];
 
@@ -5626,7 +5626,7 @@ static const CGFloat kHorizontalTabBarHeight = 22;
             // In practice, this never happens because the prefs panel is
             // always key when this notification is posted.
             if ([iTermPreferences boolForKey:kPreferenceKeyHideMenuBarInFullscreen]) {
-                [self showMenuBarHideDock];
+                [self hideMenuBar];
             } else {
                 [self hideMenuBar];
             }
